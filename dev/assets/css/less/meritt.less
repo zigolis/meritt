@@ -1,0 +1,133 @@
+@largura: 960px;
+@colorTop: #E8EAEB;
+@colorBottom: #D6D9DA;
+@colorTopHover: #B3B3B7;
+@colorBottomHover: #7E8486;
+
+.gradient(@angle, @from, @to) {
+	background-image: -webkit-linear-gradient(@angle, @from, @to);
+	background-image: -moz-linear-gradient(@angle, @from, @to);
+	background-image: -ms-linear-gradient(@angle, @from, @to);
+	background-image: -o-linear-gradient(@angle, @from, @to);
+	background-image: linear-gradient(@angle, @from, @to);
+}
+
+.radius(@raio: 5px) {
+  -webkit-border-radius: @raio;
+     -moz-border-radius: @raio;
+          border-radius: @raio;
+}
+
+#mrt-doc {
+	box-shadow: 1px 1px 3px #ddd;
+	margin: 0 auto;
+	min-width: @largura;
+	overflow: auto;
+	width: @largura;
+}
+
+header {
+	overflow: auto;
+}
+
+nav {
+	box-shadow: 1px 1px 3px #999;
+
+	ul {
+		.gradient(top, @colorTop, @colorBottom);
+		overflow: auto;
+	}
+	li {
+		border-right: 1px solid #ccc;
+		float: left;
+	}
+	a {
+		.gradient(top, @colorTop, @colorBottom);
+		color: #666;
+		display: block;
+		font-size: 12px;
+		padding: 8px 20px 5px;
+	}
+	a:hover, .active {
+		.gradient(top, @colorTopHover, @colorBottomHover);
+		color: #fff;
+	}
+}
+
+.bread-crumb {
+	.radius(2px);
+	background: #eee;
+	box-shadow: 1px 1px 2px #ccc;
+	float: right;
+	margin: 15px 0 60px 0;
+	padding-left: 15px;
+
+	li {
+		border-top: 3px solid #f5f5f5;
+		border-bottom: 3px solid #f5f5f5;
+		color: #666;
+		float: left;
+		font-size: 11px;
+		padding: 2px 0;
+	}
+	li:first-child {
+		border-color: #eee;
+		border-right: 3px solid #F5F5F5;
+		padding-right: 10px;
+	}
+	li:last-child {
+		border-right: 3px solid #f5f5f5;
+	}
+	li:last-child a {
+		border-left: 1px solid #ddd;
+		color: #666;
+	}
+	a {
+		background: #fff;
+		color: #42A9E3;
+		padding: 2px 20px;
+	}
+}
+
+.servers {
+	clear: both;
+	overflow: auto;
+
+	.box {
+		.gradient(top, @colorTop, @colorBottom);
+		border-right: 1px solid #ccc;
+		float: left;
+		height: 70px;
+		position: relative;
+		width: 150px;
+	}
+	.controls {
+		.gradient(top, #F9F8F9, #EAE9E9);
+		border-right: 1px solid #eee;
+		float: left;
+		height: 70px;
+		position: relative;
+		width: 90px;
+	}
+	.corners {
+		border-left: 12px solid transparent;
+		border-right: 12px solid transparent;
+		height: 0;
+		position: absolute;
+		right: -12px;
+		width: 0;
+		z-index: 2;
+	}
+	.top {
+		border-top: 12px solid #fff;
+	}
+	.bottom {
+		border-bottom: 12px solid #fff;
+		bottom: 0;
+		right: -13px;
+	}
+}
+
+.requests {
+	margin-top: 70px;
+}
