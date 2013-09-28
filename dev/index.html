@@ -6,10 +6,14 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=9" />
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 		
 		<link type="text/css" rel="stylesheet" href="../dist/assets/css/meritt.reset.min.css" />
 		<link type="text/css" rel="stylesheet" href="../dist/assets/css/meritt.alerts.min.css" />
 		<link type="text/css" rel="stylesheet" href="../dist/assets/css/meritt.min.css" />
+		<link type="text/css" rel="stylesheet" href="../dist/assets/css/meritt.responsive.min.css" />
 	</head>
 
 	<body>
@@ -156,20 +160,20 @@
 						<li>Avarage app <br />Response Time </li>
 					</ul><!--.headers-->
 
-					<ul class="last" id="24">
+					<ul class="last">
 						<li>Last 24 hrs</li>
-						<li>000</li>
-						<li><span>0.00</span>sec.</li>
+						<li id="cd">000</li>
+						<li id="md"><span>0.00</span>sec.</li>
 					</ul>
-					<ul class="last" id="7d">
+					<ul class="last">
 						<li>Last 7 days</li>
-						<li>000</li>
-						<li><span>0.00</span>sec.</li>
+						<li id="cw">000</li>
+						<li id="mw"><span>0.00</span>sec.</li>
 					</ul>
-					<ul class="last" id="30d">
+					<ul class="last">
 						<li>Last 30 days</li>
-						<li>000</li>
-						<li><span>0.00</span>sec.</li>
+						<li id="cm">000</li>
+						<li id="mm"><span>0.00</span>sec.</li>
 					</ul>
 				</section><!--.requests-->
 
@@ -227,7 +231,7 @@
 		<script type="text/javascript" src="../dist/assets/js/mustache.min.js"></script>
 		<script type="text/javascript" src="../dist/assets/js/meritt.urls.js"></script>
 		<script type="text/javascript" src="../dist/assets/js/meritt.alerts.min.js"></script>
-		<script type="text/javascript" src="../dist/assets/js/meritt.min.js"></script>
+		<script type="text/javascript" src="../dev/assets/js/meritt.js"></script>
 		
 		<script type="text/template" id="tpl-app">
 			{{ #. }}
@@ -239,10 +243,6 @@
 			{{#empty}}
 				<li>No links</li>
 			{{/empty}}
-		</script>
-
-		<script type="text/javascript" id="tpl-web1">
-
 		</script>
 	</body>
 </html>
