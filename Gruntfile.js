@@ -27,8 +27,9 @@ module.exports = function(grunt){
 					compress: true
 				},
 				files: {
-					"dist/assets/css/meritt.min.css" : "dev/assets/css/less/meritt.less",
-					"dist/assets/css/meritt.reset.min.css" : "dev/assets/css/less/meritt.reset.less"
+					"dist/assets/css/meritt.min.css" 		: "dev/assets/css/less/meritt.less",
+					"dist/assets/css/meritt.reset.min.css" 	: "dev/assets/css/less/meritt.reset.less",
+					"dist/assets/css/meritt.alerts.min.css" : "dev/assets/css/less/meritt.alerts.less"
 				}
 			}
 		},
@@ -42,7 +43,8 @@ module.exports = function(grunt){
 					mangle: false
 				},
 				files: {
-					'dist/assets/js/meritt.min.js' : ['dev/assets/js/meritt.js']
+					'dist/assets/js/meritt.min.js' 			: ['dev/assets/js/meritt.js'],
+					'dist/assets/js/meritt.alerts.min.js' 	: ['dev/assets/js/meritt.alerts.js']
 				}
 			}
 		},
