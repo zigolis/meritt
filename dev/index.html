@@ -181,36 +181,36 @@
 					<h4>Environment Variables</h4>
 					<p>We also make setting up custom Environment Variables really easy.</p>
 
-					<form>
+					<form id="variables">
 						<fieldset>
 							<div>
-								<input type="text" name="key" placeholder="KEY" class="input text" />
+								<input type="text" name="input_1" placeholder="KEY" class="input text" id="input_1" />
 								<span class="equals">=</span>
-								<input type="text" name="value" placeholder="VALUE" class="input text" />
+								<input type="text" name="input_2" placeholder="VALUE" class="input text" id="input_2" />
 								<a href="#" class="delete">x</a>
 							</div>
 							<div>
-								<input type="text" name="key" placeholder="KEY" class="input text" />
+								<input type="text" name="input_3" placeholder="KEY" class="input text" id="input_3" />
 								<span class="equals">=</span>
-								<input type="text" name="value" placeholder="VALUE" class="input text" />
+								<input type="text" name="input_4" placeholder="VALUE" class="input text" id="input_4" />
 								<a href="#" class="delete">x</a>
 							</div>
 							<div>
-								<input type="text" name="key" placeholder="KEY" class="input text" />
+								<input type="text" name="key" placeholder="KEY" class="input text" id="input-5" />
 								<span class="equals">=</span>
-								<input type="text" name="value" placeholder="VALUE" class="input text" />
+								<input type="text" name="value" placeholder="VALUE" class="input text" id="input-6" />
 								<a href="#" class="delete">x</a>
 							</div>
 							<div>
-								<input type="text" name="key" placeholder="KEY" class="input text" />
+								<input type="text" name="key" placeholder="KEY" class="input text" id="input-7" />
 								<span class="equals">=</span>
-								<input type="text" name="value" placeholder="VALUE" class="input text" />
+								<input type="text" name="value" placeholder="VALUE" class="input text" id="input-8" />
 								<a href="#" class="delete">x</a>
 							</div>
 						</fieldset>
 
 						<a href="#" class="add-another"><span class="plus">+</span>Add Another</a>
-						<input type="submit" value="save" />
+						<input type="submit" value="save" id="salvar" />
 					</form>
 
 					<div class="info">
@@ -231,7 +231,7 @@
 		<script type="text/javascript" src="../dist/assets/js/mustache.min.js"></script>
 		<script type="text/javascript" src="../dist/assets/js/meritt.urls.js"></script>
 		<script type="text/javascript" src="../dist/assets/js/meritt.alerts.min.js"></script>
-		<script type="text/javascript" src="../dev/assets/js/meritt.js"></script>
+		<script type="text/javascript" src="../dist/assets/js/meritt.min.js"></script>
 		
 		<script type="text/template" id="tpl-app">
 			{{ #. }}

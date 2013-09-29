@@ -104,10 +104,7 @@ var requests = {
 
 		$.each(requests, function(i, item){
 			var rt  	= this.response_time,
-			 	dt  	= this.date,
-			 	div 	= $('<div/>', {
-			 		'html' : '<p>' + rt + '</p>'
-			 	});
+			 	dt  	= this.date;
 
 			ms = self.literalToDate(inicialDate).getTime() - self.literalToDate(dt).getTime();
 
@@ -168,5 +165,32 @@ $(function(){
 		});
 
 		e.preventDefault();
+	});
+
+	setStorage = function(){
+		if (localStorage["input_1"]) {
+			$('#input_1').val(localStorage["input_1"]);
+		}
+		if (localStorage["input_2"]) {
+			$('#input_2').val(localStorage["input_2"]);
+		}
+		if (localStorage["input_3"]) {
+			$('#input_3').val(localStorage["input_3"]);
+		}
+		if (localStorage["input_4"]) {
+			$('#input_4').val(localStorage["input_4"]);
+		}
+	}()
+});
+
+$(".input").change(function () {
+    localStorage[$(this).attr("name")] = $(this).val();
+});
+
+$("#salvar").click(function() {
+	localStorage.clear();
+
+	$("#variables").each(function(){ 
+		this.reset()
 	});
 });
