@@ -6,15 +6,15 @@ t = function(){
 }
 
 GetLoading = function(){
-	$("body").css({"opacity" : ".5"})
-	$("body").append('<div class="loader">Loading...</div>')
+	$("body").css({"opacity" : ".5"});
+	$("body").append('<div class="loader">Loading...</div>');
 }
 
 GetLoaded = function(){
-	$("body").animate({"opacity" : "1"})
+	$("body").animate({"opacity" : "1"});
 	$(".loader").fadeOut("slow",function(){
-		$(this).remove()
-	})
+		$(this).remove();
+	});
 }
 
 GetMonsterAppService = function(){
@@ -50,7 +50,7 @@ GetServerInfoService = function(){
 			});
 		});
 
-		// t();
+		t();
 	});
 }
 
@@ -70,8 +70,8 @@ var requests = {
 			self.getRequests(RequestsServiceGet03),
 			self.getRequests(RequestsServiceGet04)
 		)
-        .fail(function(a,b,c,d){
-            console.log("error")
+        .fail(function(){
+            console.log("error");
         })
         .done(function(a,b,c,d){
             var allRequests = [].concat(a[0]).concat(b[0]).concat(c[0]).concat(d[0]);
@@ -86,38 +86,38 @@ var requests = {
 
 	literalToDate: function(obj){
 		var exp = /(\d{4})\-(\d{2})\-(\d{2})T(\d{2}):(\d{2}):(\d{2}) ([\+\-])(\d{2}):(\d{2})/;
-		var dateString = obj.replace(exp, '$1/$2/$3 $4:$5:$6 $7$8$9')
+		var dateString = obj.replace(exp, '$1/$2/$3 $4:$5:$6 $7$8$9');
 		return new Date(dateString);
 
         // exec literalToDate
+        // var self = this;
         // ms = self.literalToDate(inicialDate).getTime() - self.literalToDate(dt).getTime();
     },
 
     showRequests: function(requests){
-        var self = this;
-        var cd   = 0, td = 0, md = 0, cw = 0, tw = 0, mw = 0, cm = 0, tm = 0, mm = 0;
+        var cd = 0, td = 0, md = 0, cw = 0, tw = 0, mw = 0, cm = 0, tm = 0, mm = 0;
         var inicialDate = new Date("2014-07-16T01:00:00+03:00");
 
-        $.each(requests, function(i, item){
+        $.each(requests, function(){
             var rt = this.response_time,
                 dt = new Date(this.date);
 
             ms = inicialDate.getTime() - dt.getTime();
 
 			if( ms <= 86400000 ){
-				cd++
-				td = td + parseInt(rt)
-				md = td / requests.length
+				cd++;
+				td = td + parseInt(rt);
+				md = td / requests.length;
 			}
 			else if( ms <= 604800000 ){
-				cw++
-				tw = tw + parseInt(rt)
-				mw = tw / requests.length
+				cw++;
+				tw = tw + parseInt(rt);
+				mw = tw / requests.length;
 			}
 			else if( ms <= 2592000000 ){
-				cm++
-				tm = tm + parseInt(rt)
-				mm = tm / requests.length
+				cm++;
+				tm = tm + parseInt(rt);
+				mm = tm / requests.length;
 			}
 		});
 
@@ -133,13 +133,13 @@ var requests = {
 }
 
 $(function(){
-	GetLoading()
-	GetMonsterAppService()
-	GetServerInfoService()
-	requests.init()
+	GetLoading();
+	GetMonsterAppService();
+	GetServerInfoService();
+	requests.init();
 
-	// setTimeout(GetServerInfoService, 5000)
-	// setTimeout(requests.init, 5000)
+	setTimeout(GetServerInfoService, 5000);
+	setTimeout(requests.init, 5000);
 
 	$("#app").click(function(e){
 		$("#app-menu").toggle(200);
@@ -154,11 +154,11 @@ $(function(){
 	});
 
 	$("#git").click(function(e){
-		$.getJSON(GitCloneServiceGet, function(data){
+		$.getJSON(GitCloneServiceGet, function(){
             //TODO
 		})
         .fail(function(jqXHR){
-			jAlert(InternalErrorMessage, InternalErrorTitle);
+			jAlert(jqXHR.responseJSON.msg, jqXHR.statusText);
 		});
 
 		e.preventDefault();
@@ -166,16 +166,16 @@ $(function(){
 
 	setStorage = function(){
 		if (localStorage["input_1"]) {
-			$('#input_1').val(localStorage["input_1"]);
+			$("#input_1").val(localStorage["input_1"]);
 		}
 		if (localStorage["input_2"]) {
-			$('#input_2').val(localStorage["input_2"]);
+			$("#input_2").val(localStorage["input_2"]);
 		}
 		if (localStorage["input_3"]) {
-			$('#input_3').val(localStorage["input_3"]);
+			$("#input_3").val(localStorage["input_3"]);
 		}
 		if (localStorage["input_4"]) {
-			$('#input_4').val(localStorage["input_4"]);
+			$("#input_4").val(localStorage["input_4"]);
 		}
 	}();
 
