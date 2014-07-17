@@ -129,6 +129,7 @@ var requests = {
 		$("#mm span").text(mm.toFixed(2));
 
 		GetLoaded();
+        t();
 	}
 }
 
@@ -139,7 +140,7 @@ $(function(){
 	requests.init();
 
 	setTimeout(GetServerInfoService, 5000);
-	setTimeout(requests.init, 5000);
+	// setTimeout(requests.init, 5000);
 
 	$("#app").click(function(e){
 		$("#app-menu").toggle(200);

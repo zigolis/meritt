@@ -80,7 +80,6 @@ module.exports = function(grunt){
                 }]
             }
         }
-
     });
 
     grunt.loadNpmTasks( 'grunt-contrib-htmlmin' );
@@ -96,5 +95,4 @@ module.exports = function(grunt){
     grunt.registerTask( 'build', [ 'uglify', 'less', 'htmlmin' ] );
     grunt.registerTask( 'test', [ 'jshint' ] );
     grunt.registerTask( 'image', [ 'imagemin' ] );
-
 }
